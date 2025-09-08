@@ -1,0 +1,12 @@
+### Twitter API credentials
+TWITTER_USERNAME = "username"
+TWITTER_EMAIL = "email@gmail.com"
+TWITTER_PASSWORD = "password"
+
+### Telegram Bot API token
+TELEGRAM_BOT_TOKEN = "0000000000:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+TELEGRAM_ADMIN_CHAT_ID = 1234567890 
+
+### Настройки бота
+CHECK_INTERVAL_SECONDS = 300
+DB_NAME = "processed_tweets.db"
