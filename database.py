@@ -1,10 +1,11 @@
 import sqlite3
-from config import DB_NAME
+import os
+
+DB_NAME = os.getenv("DB_NAME", "default.db")
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-    # Таблица для хранения состояния, например, последнего виденного твита
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS bot_state (
             key TEXT PRIMARY KEY,
@@ -13,6 +14,7 @@ def init_db():
     ''')
     conn.commit()
     conn.close()
+    print(f"[Database] База данных '{DB_NAME}' инициализирована.")
 
 def get_last_seen_tweet_id():
     conn = sqlite3.connect(DB_NAME)
@@ -25,7 +27,6 @@ def get_last_seen_tweet_id():
 def set_last_seen_tweet_id(tweet_id: str):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-    # INSERT OR REPLACE - удобная команда для вставки или обновления записи
     cursor.execute("INSERT OR REPLACE INTO bot_state (key, value) VALUES (?, ?)", ('last_seen_tweet_id', tweet_id))
     conn.commit()
     conn.close()

@@ -1,1 +1,11 @@
-config.py
+# Python
+__pycache__/
+*.pyc
+
+# Environment variables
+.venv/
+.env
+
+# Session and database files
+*.json
+*.db

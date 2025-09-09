@@ -1,12 +1,28 @@
-### Twitter API credentials
-TWITTER_USERNAME = "username"
-TWITTER_EMAIL = "email@gmail.com"
-TWITTER_PASSWORD = "password"
+```
+python -m venv .venv
+.venv\Scripts\activate
+```
 
-### Telegram Bot API token
-TELEGRAM_BOT_TOKEN = "0000000000:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-TELEGRAM_ADMIN_CHAT_ID = 1234567890 
+```
+python get_cookies.py
+```
 
-### Настройки бота
-CHECK_INTERVAL_SECONDS = 300
-DB_NAME = "processed_tweets.db"
+Создать '.env' с полями:
+```
+TELEGRAM_BOT_TOKEN="0000000000:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+TELEGRAM_ADMIN_CHAT_ID=0000000000
+
+COOKIES_PATH="cookies.json"
+
+CHECK_INTERVAL_SECONDS=300
+DB_NAME="processed_tweets.db"
+```
+
+```
+python main.py
+```
+
+Необходимо:
+1. проверить и реализовать логику телеграм бота для модерации
+2. реализовать проверку текста
+3. реализовать более полный мониторинг и логирование
